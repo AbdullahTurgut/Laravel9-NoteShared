@@ -38,49 +38,51 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">
 
     <!-- Animate.css -->
-    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="{{asset('assets')}}/css/animate.css">
     <!-- Icomoon Icon Fonts-->
-    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="{{asset('assets')}}/css/icomoon.css">
     <!-- Bootstrap  -->
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="{{asset('assets')}}/css/bootstrap.css">
 
     <!-- Magnific Popup -->
-    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="{{asset('assets')}}/css/magnific-popup.css">
 
     <!-- Owl Carousel  -->
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="{{asset('assets')}}/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="{{asset('assets')}}/css/owl.theme.default.min.css">
 
     <!-- Flexslider  -->
-    <link rel="stylesheet" href="css/flexslider.css">
+    <link rel="stylesheet" href="{{asset('assets')}}/css/flexslider.css">
 
     <!-- Pricing -->
-    <link rel="stylesheet" href="css/pricing.css">
+    <link rel="stylesheet" href="{{asset('assets')}}/css/pricing.css">
 
     <!-- Theme style  -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{asset('assets')}}/css/style.css">
 
     <!-- Modernizr JS -->
-    <script src="js/modernizr-2.6.2.min.js"></script>
+    <script src="{{asset('assets')}}/js/modernizr-2.6.2.min.js"></script>
     <!-- FOR IE9 below -->
     <!--[if lt IE 9]>
-    <script src="js/respond.min.js"></script>
+    <script src="{{asset('assets')}}/js/respond.min.js"></script>
     <![endif]-->
     @yield('head')
 </head>
 <body>
+<div class="fh5co-loader"></div>
 
-<h1>Header</h1>
+<div id="page">
+    @include('home.header');
 
-@section('sidebar')
-    This is the master sidebar.
-@show
+    @section('slider')
+        @include('home.slider');
+    @show
 
-<div class="container">
+
     @yield('content')
-</div>
 
-<h1>Footer</h1>
+
+    @include('home.footer');
 @yield('foot')
 </body>
 </html>
