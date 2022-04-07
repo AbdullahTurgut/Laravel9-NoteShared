@@ -4,7 +4,6 @@
 
 
 @section('content')
-    <!-- partial -->
     <div class="main-panel">
         <div class="content-wrapper">
 
@@ -38,6 +37,5 @@
                 </div>
             </div>
         </div>
-    </div>
-    <!-- content-wrapper ends -->
+        <!-- content-wrapper ends -->
 @endsection
