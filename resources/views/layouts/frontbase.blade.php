@@ -34,8 +34,8 @@
     <meta name="twitter:url" content="" />
     <meta name="twitter:card" content="" />
 
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/{{asset('assets')}}/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/{{asset('assets')}}/css?family=Roboto+Slab:300,400" rel="stylesheet">
 
     <!-- Animate.css -->
     <link rel="stylesheet" href="{{asset('assets')}}/css/animate.css">

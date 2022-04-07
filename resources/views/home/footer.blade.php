@@ -1,4 +1,4 @@
-//***************FOOTER******************
+
 <footer id="fh5co-footer" role="contentinfo" style="background-image: url({{asset('assets')}}/images/img_bg_4.jpg);">
     <div class="overlay"></div>
     <div class="container">
