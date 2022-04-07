@@ -1,5 +1,6 @@
 <?php
-
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,10 +24,14 @@ Route::get('/hello', function () {
 });
 
 //call controller function
-Route::get('/', [\App\Http\Controllers\HomeController::class,'index'])->name('home');
+Route::get('/', [HomeController::class,'index'])->name('home');
 
 
 
 Route::middleware(['auth:sanctum','verified'])->get('/dashboard',function(){
     return view('dashboard');
 })->name('dashboard');
+
+
+//***********AdminPanel Controller***************
+Route::get('/admin', [AdminHomeController::class,'index'])->name('admin');
