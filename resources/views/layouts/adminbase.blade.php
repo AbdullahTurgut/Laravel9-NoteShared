@@ -20,18 +20,20 @@
     @yield('head')
 </head>
 <body>
-
+<div class="container-scroller">
     @include('admin.header');
-
+    <div class="container-fluid page-body-wrapper">
     @section('sidebar')
         @include('admin.sidebar')
     @show
-
+        <div class="main-panel">
     @yield('content')
 
 
-    @include('admin.footer');
+    @include('admin.footer')
     @yield('foot')
-
+        </div>
+    </div>
+</div>
 </body>
 </html>
