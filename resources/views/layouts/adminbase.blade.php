@@ -31,7 +31,7 @@
 
 
     @include('admin.footer');
-@yield('foot')
+    @yield('foot')
 
 </body>
 </html>

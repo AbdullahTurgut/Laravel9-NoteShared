@@ -3,12 +3,12 @@
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="/admin">
                     <i class="mdi mdi-home menu-icon"></i>
-                    <span class="menu-title">Dashboard</span>
+                    <span class="menu-title">Home</span>
                 </a>
             </li>
-            <li class="nav-item">
+            <!--<li class="nav-item">
                 <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
                     <i class="mdi mdi-circle-outline menu-icon"></i>
                     <span class="menu-title">UI Elements</span>
@@ -20,51 +20,41 @@
                         <li class="nav-item"> <a class="nav-link" href="{{asset('assets')}}/admin/pages/ui-features/typography.html">Typography</a></li>
                     </ul>
                 </div>
-            </li>
+            </li>-->
             <li class="nav-item">
-                <a class="nav-link" href="{{asset('assets')}}/admin/pages/forms/basic_elements.html">
-                    <i class="mdi mdi-view-headline menu-icon"></i>
-                    <span class="menu-title">Form elements</span>
+                <a class="nav-link" href="/admin/category">
+                    <i class="mdi mdi-table-large menu-icon"></i>
+                    <span class="menu-title">Categories</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{asset('assets')}}/admin/pages/charts/chartjs.html">
-                    <i class="mdi mdi-chart-pie menu-icon"></i>
-                    <span class="menu-title">Charts</span>
+                <a class="nav-link" href="/admin/user">
+                    <i class="mdi mdi-account-circle menu-icon"></i>
+                    <span class="menu-title">Users</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{asset('assets')}}/admin/pages/tables/basic-table.html">
-                    <i class="mdi mdi-grid-large menu-icon"></i>
-                    <span class="menu-title">Tables</span>
+                <a class="nav-link" href="/admin/comment">
+                    <i class="mdi mdi-comment menu-icon"></i>
+                    <span class="menu-title">Comments</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{asset('assets')}}/admin/pages/icons/mdi.html">
-                    <i class="mdi mdi-emoticon menu-icon"></i>
-                    <span class="menu-title">Icons</span>
+                <a class="nav-link" href="/admin/messages">
+                    <i class="mdi mdi-message-text menu-icon"></i>
+                    <span class="menu-title">Messages</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-                    <i class="mdi mdi-account menu-icon"></i>
-                    <span class="menu-title">User Pages</span>
-                    <i class="menu-arrow"></i>
+                <a class="nav-link" href="/admin/faq">
+                    <i class="mdi mdi-comment-question-outline menu-icon"></i>
+                    <span class="menu-title">FAQ</span>
                 </a>
-                <div class="collapse" id="auth">
-                    <ul class="nav flex-column sub-menu">
-                        <li class="nav-item"> <a class="nav-link" href="{{asset('assets')}}/admin/pages/samples/login.html"> Login </a></li>
-                        <li class="nav-item"> <a class="nav-link" href="{{asset('assets')}}/admin/pages/samples/login-2.html"> Login 2 </a></li>
-                        <li class="nav-item"> <a class="nav-link" href="{{asset('assets')}}/admin/pages/samples/register.html"> Register </a></li>
-                        <li class="nav-item"> <a class="nav-link" href="{{asset('assets')}}/admin/pages/samples/register-2.html"> Register 2 </a></li>
-                        <li class="nav-item"> <a class="nav-link" href="{{asset('assets')}}/admin/pages/samples/lock-screen.html"> Lockscreen </a></li>
-                    </ul>
-                </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{asset('assets')}}/admin/documentation/documentation.html">
-                    <i class="mdi mdi-file-document-box-outline menu-icon"></i>
-                    <span class="menu-title">Documentation</span>
+                <a class="nav-link" href="/admin/setting">
+                    <i class="mdi mdi-settings menu-icon"></i>
+                    <span class="menu-title">Settings</span>
                 </a>
             </li>
         </ul>
