@@ -37,6 +37,7 @@
                                 <th>Status</th>
                                 <th>Edit</th>
                                 <th>Delete</th>
+                                <th>Show</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -48,8 +49,10 @@
                                     <td>{{$rs->description}}</td>
                                     <td>{{$rs->image}}</td>
                                     <td>{{$rs->status}}</td>
-                                    <td><a href="/admin/category/edit/{{$rs->id}}" class="btn btn-success btn-rounded btn-fw">Edit</a></td>
-                                    <td><a href="/admin/category/delete/{{$rs->id}}" class="btn btn-danger btn-rounded btn-fw">Delete</a></td>
+                                    <td><a href="/admin/category/edit/{{$rs->id}}" class="btn btn-primary btn-rounded btn-fw">Edit</a></td>
+                                    <td><a href="/admin/category/destroy/{{$rs->id}}" class="btn btn-danger btn-rounded btn-fw"
+                                        onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
+                                    <td><a href="/admin/category/show/{{$rs->id}}" class="btn btn-success btn-rounded btn-fw">Show</a></td>
                                 </tr>
                             @endforeach
                             </tbody>
