@@ -11,10 +11,10 @@
                 <div class="d-flex justify-content-between flex-wrap">
                     <div class="d-flex align-items-end flex-wrap">
                         <div class="me-md-3 me-xl-5">
-                            <a href="/admin/category/create" class="btn btn-primary">Add Category</a>
+                            <a href="{{route('admin.category.create')}}" class="btn btn-primary">Add Category</a>
                         </div>
                         <div class="d-flex">
-                            <p class="text-muted mb-0 hover-cursor"><a href="/admin">Home</a>&nbsp;/&nbsp;</p>
+                            <p class="text-muted mb-0 hover-cursor"><a href="{{route('admin.index')}}">Home</a>&nbsp;/&nbsp;</p>
                             <p>Category List</p>
                         </div>
                     </div>
@@ -49,10 +49,10 @@
                                     <td>{{$rs->description}}</td>
                                     <td>{{$rs->image}}</td>
                                     <td>{{$rs->status}}</td>
-                                    <td><a href="/admin/category/edit/{{$rs->id}}" class="btn btn-primary btn-rounded btn-fw">Edit</a></td>
-                                    <td><a href="/admin/category/destroy/{{$rs->id}}" class="btn btn-danger btn-rounded btn-fw"
+                                    <td><a href="{{route('admin.category.edit',['id'=>$rs->id])}}" class="btn btn-primary btn-rounded btn-fw">Edit</a></td>
+                                    <td><a href="{{route('admin.category.destroy',['id'=>$rs->id])}}" class="btn btn-danger btn-rounded btn-fw"
                                         onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
-                                    <td><a href="/admin/category/show/{{$rs->id}}" class="btn btn-success btn-rounded btn-fw">Show</a></td>
+                                    <td><a href="{{route('admin.category.show',['id'=>$rs->id])}}" class="btn btn-success btn-rounded btn-fw">Show</a></td>
                                 </tr>
                             @endforeach
                             </tbody>

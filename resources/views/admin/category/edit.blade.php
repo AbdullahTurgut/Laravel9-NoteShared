@@ -14,7 +14,7 @@
                             <h2>Edit {{$data->title}}</h2>
                         </div>
                         <div class="d-flex">
-                            <p class="text-muted mb-0 hover-cursor"><a href="/admin">Home</a>&nbsp;/&nbsp;</p>
+                            <p class="text-muted mb-0 hover-cursor"><a href="{{route('admin.index')}}">Home</a>&nbsp;/&nbsp;</p>
                             <p>Edit Category</p>
                         </div>
                     </div>
@@ -22,7 +22,7 @@
             </div>
         </div>
         <h4 class="card-title">Category Elements</h4>
-        <form class="forms-sample" action="/admin/category/update/{{$data->id}}" method="post">
+        <form class="forms-sample" action="{{route('admin.category.update',['id'=>$data->id])}}" method="post">
             @csrf
             <div class="form-group">
                 <label for="exampleInputEmail3">Title</label>

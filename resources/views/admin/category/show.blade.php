@@ -12,12 +12,12 @@
                     <div class="d-flex align-items-end flex-wrap">
                         <div class="me-md-3 me-xl-5">
                             <h2>Showing Table Title : {{$data->title}}</h2>
-                            <a href="/admin/category/edit/{{$data->id}}" class="btn btn-primary" style="width: 150px">Edit</a>
-                            <a href="/admin/category/destroy/{{$data->id}}" class="btn btn-danger"
+                            <a href="{{route('admin.category.edit',['id'=>$data->id])}}" class="btn btn-primary" style="width: 150px">Edit</a>
+                            <a href="{{route('admin.category.destroy',['id'=>$data->id])}}" class="btn btn-danger"
                                onclick="return confirm('Are you sure you want to delete?')" style="width: 150px">Delete</a></td>
                         </div>
                         <div class="d-flex">
-                            <p class="text-muted mb-0 hover-cursor"><a href="/admin">Home</a>&nbsp;/&nbsp;</p>
+                            <p class="text-muted mb-0 hover-cursor"><a href="{{route('admin.index')}}">Home</a>&nbsp;/&nbsp;</p>
                             <p>Show Category</p>
                         </div>
                     </div>

@@ -14,7 +14,7 @@
                             <h2>Add Category</h2>
                         </div>
                         <div class="d-flex">
-                            <p class="text-muted mb-0 hover-cursor"><a href="/admin">Home</a>&nbsp;/&nbsp;</p>
+                            <p class="text-muted mb-0 hover-cursor"><a href="{{route('admin.index')}}">Home</a>&nbsp;/&nbsp;</p>
                             <p>Add Category</p>
                         </div>
                     </div>
@@ -22,7 +22,7 @@
             </div>
         </div>
         <h4 class="card-title">Category Elements</h4>
-        <form class="forms-sample" action="/admin/category/store" method="post">
+        <form class="forms-sample" action="{{route('admin.category.store')}}" method="post">
             @csrf
             <div class="form-group">
                 <label for="exampleInputEmail3">Title</label>
