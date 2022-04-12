@@ -47,11 +47,15 @@
                                     <td>{{$rs->title}}</td>
                                     <td>{{$rs->keywords}}</td>
                                     <td>{{$rs->description}}</td>
-                                    <td>{{$rs->image}}</td>
+                                    <td>
+                                        @if($rs->image)
+                                            <img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" style="height: 40px">
+                                        @endif
+                                    </td>
                                     <td>{{$rs->status}}</td>
                                     <td><a href="{{route('admin.category.edit',['id'=>$rs->id])}}" class="btn btn-primary btn-rounded btn-fw">Edit</a></td>
                                     <td><a href="{{route('admin.category.destroy',['id'=>$rs->id])}}" class="btn btn-danger btn-rounded btn-fw"
-                                        onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
+                                           onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
                                     <td><a href="{{route('admin.category.show',['id'=>$rs->id])}}" class="btn btn-success btn-rounded btn-fw">Show</a></td>
                                 </tr>
                             @endforeach

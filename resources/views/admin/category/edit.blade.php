@@ -22,7 +22,7 @@
             </div>
         </div>
         <h4 class="card-title">Category Elements</h4>
-        <form class="forms-sample" action="{{route('admin.category.update',['id'=>$data->id])}}" method="post">
+        <form class="forms-sample" action="{{route('admin.category.update',['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="exampleInputEmail3">Title</label>
@@ -38,12 +38,8 @@
             </div>
             <div class="form-group">
                 <label>Image</label>
-                <input type="file" name="image" class="file-upload-default">
                 <div class="input-group col-xs-12">
-                    <input type="text" class="form-control file-upload-info" disabled="" placeholder="Upload Image">
-                    <span class="input-group-append">
-                          <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
-                        </span>
+                    <input type="file" name="image" class="form-control custom-file-input">
                 </div>
             </div>
             <div class="form-group">

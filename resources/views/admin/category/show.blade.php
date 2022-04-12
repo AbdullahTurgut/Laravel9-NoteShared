@@ -43,9 +43,14 @@
                     <th>Description</th>
                     <td>{{$data->description}}</td>
                 </tr>
-                <tr>
+                <tr class="table-warning">
                     <th>Image</th>
-                    <td>{{$data->image}}</td>
+                <!--<td>{{$data->image}}</td> -->
+                    <td>
+                        @if($data->image)
+                            <img src="{{\Illuminate\Support\Facades\Storage::url($data->image)}}" style="height: 50px">
+                        @endif
+                    </td>
                 </tr>
                 <tr class="table-primary">
                     <th>Status</th>
