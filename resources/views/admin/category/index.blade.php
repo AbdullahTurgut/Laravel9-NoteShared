@@ -30,9 +30,8 @@
                             <thead>
                             <tr>
                                 <th>Id</th>
+                                <th>Parent Id</th>
                                 <th>Title</th>
-                                <th>Keywords</th>
-                                <th>Description</th>
                                 <th>Image</th>
                                 <th>Status</th>
                                 <th>Edit</th>
@@ -44,12 +43,11 @@
                             @foreach($data as $rs)
                                 <tr>
                                     <td>{{$rs->id}}</td>
+                                    <td>{{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title)}}</td>
                                     <td>{{$rs->title}}</td>
-                                    <td>{{$rs->keywords}}</td>
-                                    <td>{{$rs->description}}</td>
-                                    <td>
+                                    <td class="py-1">
                                         @if($rs->image)
-                                            <img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" style="height: 40px">
+                                            <img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" alt="image">
                                         @endif
                                     </td>
                                     <td>{{$rs->status}}</td>
