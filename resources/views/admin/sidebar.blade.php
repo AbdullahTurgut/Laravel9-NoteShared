@@ -23,6 +23,12 @@
             </li>-->
             <li class="nav-item">
                 <a class="nav-link" href="/admin/category">
+                    <i class="mdi mdi-content-save menu-icon"></i>
+                    <span class="menu-title">Content</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/category">
                     <i class="mdi mdi-table-large menu-icon"></i>
                     <span class="menu-title">Categories</span>
                 </a>
