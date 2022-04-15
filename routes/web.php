@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminPanel\AdminContentController;
 use App\Http\Controllers\AdminPanel\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
@@ -41,7 +42,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
 //***********AdminPanel Controller***************
     Route::get('/', [AdminHomeController::class,'index'])->name('index');
 
-//    ***********AdminPanel Category Controller***************
+//    ***********AdminPanel CATEGORY ROUTES***************
     Route::prefix('/category')->name('category.')->controller(CategoryController::class)->group(function () {
     Route::get('', 'index')->name('index');
     Route::get('/create', 'create')->name('create');
@@ -50,5 +51,16 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::post('/update/{id}', 'update')->name('update');
     Route::get('/destroy/{id}', 'destroy')->name('destroy');
     Route::get('/show/{id}', 'show')->name('show');
+    });
+
+//    ***********AdminPanel CONTENT ROUTES***************
+    Route::prefix('/content')->name('content.')->controller(AdminContentController::class)->group(function () {
+        Route::get('', 'index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/store', 'store')->name('store');
+        Route::get('/edit/{id}', 'edit')->name('edit');
+        Route::post('/update/{id}', 'update')->name('update');
+        Route::get('/destroy/{id}', 'destroy')->name('destroy');
+        Route::get('/show/{id}', 'show')->name('show');
     });
 });

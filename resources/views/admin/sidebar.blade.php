@@ -22,7 +22,7 @@
                 </div>
             </li>-->
             <li class="nav-item">
-                <a class="nav-link" href="/admin/category">
+                <a class="nav-link" href="/admin/content">
                     <i class="mdi mdi-content-save menu-icon"></i>
                     <span class="menu-title">Content</span>
                 </a>
