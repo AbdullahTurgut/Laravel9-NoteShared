@@ -68,9 +68,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
 //    ***********ADMIN CONTENT IMAGE GALLERY ROUTES***************
     Route::prefix('/image')->name('image.')->controller(ImageController::class)->group(function () {
         Route::get('/{cid}', 'index')->name('index');
-        Route::get('/create/{cid}', 'create')->name('create');
         Route::post('/store/{cid}', 'store')->name('store');
-        Route::post('/update/{cid}/{id}', 'update')->name('update');
         Route::get('/destroy/{cid}/{id}', 'destroy')->name('destroy');
 
     });

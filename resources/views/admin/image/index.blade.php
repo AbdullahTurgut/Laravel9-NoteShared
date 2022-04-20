@@ -33,9 +33,8 @@
                             <thead>
                             <tr>
                                 <th style="width: 20px">Id</th>
-                                <th>Title</th>
+                                <th style="width: 300px">Title</th>
                                 <th>Image</th>
-                                <th style="width: 50px">Update</th>
                                 <th style="width: 50px">Delete</th>
 
                             </tr>
@@ -47,11 +46,10 @@
                                     <td>{{$rs->title}}</td>
                                     <td class="py-1">
                                         @if($rs->image)
-                                            <img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" alt="image">
+                                            <img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}">
                                         @endif
                                     </td>
-                                    <td><a href="{{route('admin.category.edit',['id'=>$rs->id])}}" class="btn btn-primary btn-rounded btn-fw">Edit</a></td>
-                                    <td><a href="{{route('admin.category.destroy',['id'=>$rs->id])}}" class="btn btn-danger btn-rounded btn-fw"
+                                    <td><a href="{{route('admin.image.destroy',['cid'=>$content->id,'id'=>$rs->id])}}" class="btn btn-danger btn-rounded btn-fw"
                                            onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
 
                                 </tr>
