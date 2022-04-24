@@ -8,103 +8,27 @@
         <div class="container">
             <div class="row animate-box">
                 <div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
-                    <h2>Course categories</h2>
+                    <h2>CONTENT CATEGORIES</h2>
                     <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3 col-sm-6 text-center animate-box">
-                    <div class="services">
-						<span class="icon">
-							<i class="icon-shop"></i>
-						</span>
-                        <div class="desc">
-                            <h3><a href="#">Business</a></h3>
-                            <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 text-center animate-box">
-                    <div class="services">
-						<span class="icon">
-							<i class="icon-heart4"></i>
-						</span>
-                        <div class="desc">
-                            <h3><a href="#">Health &amp; Psychology</a></h3>
-                            <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 text-center animate-box">
-                    <div class="services">
-						<span class="icon">
-							<i class="icon-banknote"></i>
-						</span>
-                        <div class="desc">
-                            <h3><a href="#">Accounting</a></h3>
-                            <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 text-center animate-box">
-                    <div class="services">
-						<span class="icon">
-							<i class="icon-lab2"></i>
-						</span>
-                        <div class="desc">
-                            <h3><a href="#">Science &amp; Technology</a></h3>
-                            <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 text-center animate-box">
-                    <div class="services">
-						<span class="icon">
-							<i class="icon-photo"></i>
-						</span>
-                        <div class="desc">
-                            <h3><a href="#">Art &amp; Media</a></h3>
-                            <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 text-center animate-box">
-                    <div class="services">
-						<span class="icon">
-							<i class="icon-home-outline"></i>
-						</span>
-                        <div class="desc">
-                            <h3><a href="#">Real Estate</a></h3>
-                            <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 text-center animate-box">
-                    <div class="services">
-						<span class="icon">
-							<i class="icon-bubble3"></i>
-						</span>
-                        <div class="desc">
-                            <h3><a href="#">Language</a></h3>
-                            <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-                        </div>
-                    </div>
-                </div>
+                @foreach($contentlist1 as $rs)
                 <div class="col-md-3 col-sm-6 text-center animate-box">
                     <div class="services">
 						<span class="icon">
 							<i class="icon-world"></i>
 						</span>
                         <div class="desc">
-                            <h3><a href="#">Web &amp; Programming</a></h3>
-                            <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+                            <h3><a href="#">{{$rs->title}}</a></h3>
+                            <p>{{$rs->description}}</p>
                         </div>
                     </div>
                 </div>
+                @endforeach
             </div>
         </div>
     </div>
-
     <div id="fh5co-counter" class="fh5co-counters" style="background-image: url({{asset('assets')}}/images/img_bg_4.jpg);" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
@@ -146,50 +70,19 @@
                 </div>
             </div>
             <div class="row">
+                @foreach($contentlist1 as $rs)
                 <div class="col-md-6 animate-box">
                     <div class="course">
-                        <a href="#" class="course-img" style="background-image: url({{asset('assets')}}/images/project-1.jpg);">
+                        <a href="#" class="course-img" style="background-image: url({{\Illuminate\Support\Facades\Storage::url($rs->image)}});width:245px;height: 300px;">
                         </a>
                         <div class="desc">
-                            <h3><a href="#">Web Master</a></h3>
-                            <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+                            <h3><a href="#">{{$rs->title}}</a></h3>
+                            <p>{{$rs->description}}</p>
                             <span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 animate-box">
-                    <div class="course">
-                        <a href="#" class="course-img" style="background-image: url({{asset('assets')}}/images/project-2.jpg);">
-                        </a>
-                        <div class="desc">
-                            <h3><a href="#">Business &amp; Accounting</a></h3>
-                            <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-                            <span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 animate-box">
-                    <div class="course">
-                        <a href="#" class="course-img" style="background-image: url({{asset('assets')}}/images/project-3.jpg);">
-                        </a>
-                        <div class="desc">
-                            <h3><a href="#">Science &amp; Technology</a></h3>
-                            <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-                            <span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 animate-box">
-                    <div class="course">
-                        <a href="#" class="course-img" style="background-image: url({{asset('assets')}}/images/project-4.jpg);">
-                        </a>
-                        <div class="desc">
-                            <h3><a href="#">Health &amp; Psychology</a></h3>
-                            <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-                            <span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
