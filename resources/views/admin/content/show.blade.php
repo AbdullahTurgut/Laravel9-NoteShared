@@ -51,11 +51,10 @@
                 </tr>
                 <tr class="table-danger">
                     <th>Details</th>
-                    <td>{{$data->detail}}</td>
+                    <td>{!! $data->detail !!}</td><!--Bize html formatında text göstermemesi için düzenledik-->
                 </tr>
                 <tr class="table-warning">
                     <th>Image</th>
-                <!--<td>{{$data->image}}</td> -->
                     <td>
                         @if($data->image)
                             <img src="{{\Illuminate\Support\Facades\Storage::url($data->image)}}" style="height: 50px">

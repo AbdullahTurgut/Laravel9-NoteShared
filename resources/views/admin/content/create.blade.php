@@ -1,8 +1,10 @@
 @extends('layouts.adminbase')
 
 @section('title', 'Add Content')
-
-
+<!-- CKeditörü implemente etmek için head areaya kod bloğu ekledik-->
+@section('head')
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+@endsection
 @section('content')
     <div class="content-wrapper">
 
@@ -47,9 +49,19 @@
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail3">Details</label>
-                <textarea class="form-control" name="detail" placeholder="Detail">
+                <textarea class="form-control" id="detail" name="detail" placeholder="Detail">
 
                 </textarea>
+                <script>
+                    ClassicEditor
+                        .create( document.querySelector( '#detail' ) )
+                        .then( editor => {
+                            console.log( editor );
+                        } )
+                        .catch( error => {
+                            console.error( error );
+                        } );
+                </script>
             </div>
             <div class="form-group">
                 <label>Image</label>
