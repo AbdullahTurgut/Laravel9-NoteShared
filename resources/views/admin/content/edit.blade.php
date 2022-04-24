@@ -1,8 +1,12 @@
 @extends('layouts.adminbase')
 
 @section('title', 'Edit Content')
+<!-- Content edit sayfasındaki detail için summornote eklentilerini yaptık head kısmına css linki foot kısmına js -->
 
-
+<!--SummerNote için Head alanına link ve foot alanına javascript kodlarını ekledik-->
+@section('head')
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+@endsection
 @section('content')
     <div class="content-wrapper">
 
@@ -48,7 +52,7 @@
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail3">Details</label>
-                <textarea class="form-control" name="detail" placeholder="Detail">
+                <textarea class="textarea" id="detail" name="detail" placeholder="Detail">
                         {{$data->detail}}
                 </textarea>
             </div>
@@ -70,4 +74,14 @@
         </form>
     </div>
     <!-- content-wrapper ends -->
+@endsection
+@section('foot')
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+    <script>
+        //summernote textarea için textarea'daki class bizim için önemli
+        $(function() {
+            $('.textarea').summernote()
+        })
+    </script>
 @endsection

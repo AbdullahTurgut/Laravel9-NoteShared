@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="{{asset('assets')}}/admin/css/style.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="{{asset('assets')}}/admin/images/favicon.png" />
+
+
     @yield('head')
 </head>
 <body>
