@@ -23,7 +23,7 @@
                 </div>
                 <div class="col-xs-10 text-right menu-1">
                     <ul>
-                        <li class="active"><a href="index.html">Home</a></li>
+                        <li class="active"><a href="{{route('home')}}">Home</a></li>
                         <li><a href="courses.html">Courses</a></li>
                         <li><a href="teacher.html">Teacher</a></li>
                         <li><a href="about.html">About</a></li>

@@ -78,7 +78,7 @@
                         <div class="desc">
                             <h3><a href="#">{{$rs->title}}</a></h3>
                             <p>{{$rs->description}}</p>
-                            <span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
+                            <span><a href="{{route('content',['id'=>$rs->id])}}" class="btn btn-primary btn-sm btn-course">Take A Look</a></span>
                         </div>
                     </div>
                 </div>

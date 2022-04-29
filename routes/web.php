@@ -29,7 +29,8 @@ Route::get('/hello', function () {
 
 //call controller function
 Route::get('/', [HomeController::class,'index'])->name('home');
-
+//Get Deatils Page From Main Page
+Route::get('/content/{id}',[HomeController::class, 'content'])->name('content');
 
 
 Route::middleware(['auth:sanctum','verified'])->get('/dashboard',function(){
