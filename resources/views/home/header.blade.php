@@ -19,7 +19,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-2">
-                    <div id="fh5co-logo"><a href="index.html">NoteShare</a></div>
+                    <div id="fh5co-logo"><a href="{{route('home')}}">NoteShare</a></div>
                 </div>
                 @php
                     $mainCategories=\App\Http\Controllers\HomeController::maincategorylist()

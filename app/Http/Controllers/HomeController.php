@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Content;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -36,13 +37,13 @@ class HomeController extends Controller
 
     public function categorycontents($id)
     {
-        echo "Category Contents";
-        exit();
         $sliderdata = Content::limit(4)->get();
-        $data = Content::find($id);
-        return view('home.content',[
+        $category = Category::find($id);
+        $contents=DB::table('contents')->where('category_id',$id)->get();
+        return view('home.categorycontents',[
             'sliderdata'=>$sliderdata,
-            'data'=>$data
+            'category'=>$category,
+            'contents'=>$contents
         ]);
     }
 }
