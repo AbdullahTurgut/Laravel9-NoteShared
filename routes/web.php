@@ -32,6 +32,7 @@ Route::get('/', [HomeController::class,'index'])->name('home');
 //Get Deatils Page From Main Page
 Route::get('/content/{id}',[HomeController::class, 'content'])->name('content');
 
+Route::get('/categorycontents/{id}/{slug}',[HomeController::class, 'categorycontents'])->name('categorycontents');
 
 Route::middleware(['auth:sanctum','verified'])->get('/dashboard',function(){
     return view('dashboard');

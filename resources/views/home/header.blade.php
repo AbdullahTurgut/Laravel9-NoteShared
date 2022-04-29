@@ -19,12 +19,27 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-2">
-                    <div id="fh5co-logo"><a href="index.html"><i class="icon-study"></i>Educ<span>.</span></a></div>
+                    <div id="fh5co-logo"><a href="index.html">NoteShare</a></div>
                 </div>
+                @php
+                    $mainCategories=\App\Http\Controllers\HomeController::maincategorylist()
+                @endphp
                 <div class="col-xs-10 text-right menu-1">
                     <ul>
                         <li class="active"><a href="{{route('home')}}">Home</a></li>
-                        <li><a href="courses.html">Courses</a></li>
+                        <li class="has-dropdown">
+                            <a href="#">Categories</a>
+                            <ul class="dropdown">
+                                @foreach($mainCategories as $rs)
+                                    <li class="has-dropdown">
+                                        <a href="#">{{$rs->title}}</a>
+                                        @if(count($rs->children))
+                                            @include('home.categorytree',['children' => $rs->children])
+                                        @endif
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </li>
                         <li><a href="teacher.html">Teacher</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="pricing.html">Pricing</a></li>

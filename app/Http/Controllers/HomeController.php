@@ -2,12 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Content;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     //
+    public static function maincategorylist(){
+        return Category::where('parent_id', '=' , 0)->with('children')->get();
+    }
+
 
     public function index(){
 
@@ -21,6 +26,18 @@ class HomeController extends Controller
 
     public function content($id)
     {
+        $sliderdata = Content::limit(4)->get();
+        $data = Content::find($id);
+        return view('home.content',[
+            'sliderdata'=>$sliderdata,
+            'data'=>$data
+        ]);
+    }
+
+    public function categorycontents($id)
+    {
+        echo "Category Contents";
+        exit();
         $sliderdata = Content::limit(4)->get();
         $data = Content::find($id);
         return view('home.content',[
