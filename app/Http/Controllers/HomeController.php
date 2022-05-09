@@ -70,9 +70,11 @@ class HomeController extends Controller
     }
 
     public function references(){
+        $sliderdata = Content::limit(4)->get();
         $setting = Setting::first();
 
         return view('home.references',[
+            'sliderdata'=>$sliderdata,
             'setting'=>$setting
         ]);
     }
