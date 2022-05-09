@@ -62,9 +62,11 @@ class HomeController extends Controller
     }
 
     public function contact(){
+        $sliderdata = Content::limit(4)->get();
         $setting = Setting::first();
 
         return view('home.contact',[
+            'sliderdata'=>$sliderdata,
             'setting'=>$setting
         ]);
     }
