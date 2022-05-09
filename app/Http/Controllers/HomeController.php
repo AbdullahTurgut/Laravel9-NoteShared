@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Content;
+use App\Models\Message;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -69,6 +70,19 @@ class HomeController extends Controller
             'sliderdata'=>$sliderdata,
             'setting'=>$setting
         ]);
+    }
+
+    public function storemessage(Request $request){
+        $data=new Message();
+        $data->name = $request->input('name');
+        $data->email = $request->input('email');
+        $data->phone = $request->input('phone');
+        $data->subject = $request->input('subject');
+        $data->message = $request->input('message');
+        $data->ip = request()->ip();
+        $data->save();
+
+        return redirect()->route('contact')->with('info','Your message has been sent successfully, Thank You.');
     }
 
     public function references(){
