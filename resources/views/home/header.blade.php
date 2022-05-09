@@ -41,8 +41,7 @@
                             </ul>
                         </li>
                         <li><a href="teacher.html">Teacher</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="{{route('about')}}">About Us</a></li>
                         <li class="has-dropdown">
                             <a href="blog.html">Blog</a>
                             <ul class="dropdown">
@@ -52,7 +51,8 @@
                                 <li><a href="#">API</a></li>
                             </ul>
                         </li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="{{route('contact')}}">Contact Us</a></li>
+                        <li><a href="{{route('references')}}">References</a></li>
                         <li class="btn-cta"><a href="#"><span>Login</span></a></li>
                         <li class="btn-cta"><a href="#"><span>Create a Course</span></a></li>
                     </ul>

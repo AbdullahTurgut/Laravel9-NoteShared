@@ -50,4 +50,30 @@ class HomeController extends Controller
             'contents'=>$contents
         ]);
     }
+
+    public function about(){
+        $sliderdata = Content::limit(4)->get();
+        $setting = Setting::first();
+
+        return view('home.about',[
+            'sliderdata'=>$sliderdata,
+            'setting'=>$setting
+        ]);
+    }
+
+    public function contact(){
+        $setting = Setting::first();
+
+        return view('home.contact',[
+            'setting'=>$setting
+        ]);
+    }
+
+    public function references(){
+        $setting = Setting::first();
+
+        return view('home.references',[
+            'setting'=>$setting
+        ]);
+    }
 }

@@ -27,8 +27,15 @@ Route::get('/hello', function () {
     return "Hello World";
 });
 
-//call controller function
+//************HOME PAGE ROUTES***********************
 Route::get('/', [HomeController::class,'index'])->name('home');
+Route::get('/about', [HomeController::class,'about'])->name('about');
+Route::get('/contact', [HomeController::class,'contact'])->name('contact');
+Route::get('/references', [HomeController::class,'references'])->name('references');
+
+
+
+
 //Get Deatils Page From Main Page
 Route::get('/content/{id}',[HomeController::class, 'content'])->name('content');
 
