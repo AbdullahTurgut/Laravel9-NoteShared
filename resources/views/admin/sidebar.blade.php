@@ -46,7 +46,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/admin/messages">
+                <a class="nav-link" href="{{route('admin.message.index')}}">
                     <i class="mdi mdi-message-text menu-icon"></i>
                     <span class="menu-title">Messages</span>
                 </a>
