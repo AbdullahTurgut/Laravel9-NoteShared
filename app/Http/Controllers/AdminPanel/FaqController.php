@@ -62,6 +62,10 @@ class FaqController extends Controller
     public function show(Faq $faq,$id)
     {
         //
+        $data= Faq::find($id);
+        return view('admin.faq.show',[
+            'data' => $data
+        ]);
 
     }
 
@@ -106,5 +110,8 @@ class FaqController extends Controller
     public function destroy(Faq $faq ,$id)
     {
         //
+        $data = Faq::find($id);
+        $data->delete();
+        return redirect('admin/faq');
     }
 }

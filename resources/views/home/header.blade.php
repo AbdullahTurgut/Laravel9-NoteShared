@@ -51,6 +51,7 @@
                                 <li><a href="#">API</a></li>
                             </ul>
                         </li>
+                        <li><a href="{{route('faq')}}">FAQ</a></li>
                         <li><a href="{{route('contact')}}">Contact Us</a></li>
                         <li><a href="{{route('references')}}">References</a></li>
                         <li class="btn-cta"><a href="#"><span>Login</span></a></li>

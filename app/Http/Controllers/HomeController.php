@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Content;
+use App\Models\Faq;
 use App\Models\Message;
 use App\Models\Setting;
 use Illuminate\Http\Request;
@@ -69,6 +70,16 @@ class HomeController extends Controller
         return view('home.contact',[
             'sliderdata'=>$sliderdata,
             'setting'=>$setting
+        ]);
+    }
+    public function faq(){
+        $sliderdata = Content::limit(4)->get();
+        $setting = Setting::first();
+        $datalist = Faq::all();
+        return view('home.faq',[
+            'sliderdata'=>$sliderdata,
+            'setting'=>$setting,
+            'datalist'=>$datalist
         ]);
     }
 
