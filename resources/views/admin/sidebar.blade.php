@@ -3,7 +3,7 @@
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link" href="/admin">
+                <a class="nav-link" href="{{route('admin.index')}}">
                     <i class="mdi mdi-home menu-icon"></i>
                     <span class="menu-title">Home</span>
                 </a>
@@ -52,7 +52,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/admin/faq">
+                <a class="nav-link" href="{{route('admin.faq.index')}}">
                     <i class="mdi mdi-comment-question-outline menu-icon"></i>
                     <span class="menu-title">FAQ</span>
                 </a>
