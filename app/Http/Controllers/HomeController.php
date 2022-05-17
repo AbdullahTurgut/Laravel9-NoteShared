@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Comment;
 use App\Models\Content;
 use App\Models\Faq;
 use App\Models\Message;
 use App\Models\Setting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -35,9 +37,11 @@ class HomeController extends Controller
     {
         $sliderdata = Content::limit(4)->get();
         $data = Content::find($id);
+        $comments = Comment::where('content_id',$id)->where('status','True')->get();
         return view('home.content',[
             'sliderdata'=>$sliderdata,
-            'data'=>$data
+            'data'=>$data,
+            'comments'=>$comments
         ]);
     }
 
@@ -94,6 +98,20 @@ class HomeController extends Controller
         $data->save();
 
         return redirect()->route('contact')->with('info','Your message has been sent successfully, Thank You.');
+    }
+
+    public function storecomment(Request $request){
+        //dd($request);
+        $data=new Comment();
+        $data->user_id = Auth::id(); // logged in user id
+        $data->content_id = $request->input('content_id');
+        $data->comment = $request->input('comment');
+        $data->rate = $request->input('rate');
+        $data->status = $request->input('status');
+        $data->ip = request()->ip();
+        $data->save();
+
+        return redirect()->route('content',['id'=>$request->input('content_id')])->with('success','Your comment has been sent successfully, Thank You.');
     }
 
     public function references(){
