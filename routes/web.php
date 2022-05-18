@@ -42,6 +42,8 @@ Route::get('/loginuser',[HomeController::class,'loginuser'])->name('loginuser');
 Route::get('/registeruser',[HomeController::class,'registeruser'])->name('registeruser');
 Route::get('/logoutuser',[HomeController::class,'logout'])->name('logoutuser');
 
+Route::view('/loginadmin','admin.login');
+Route::post('/loginadmincheck', [HomeController::class,'loginadmincheck'])->name('loginadmincheck');
 
 
 

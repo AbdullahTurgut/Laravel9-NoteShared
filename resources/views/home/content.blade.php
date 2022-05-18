@@ -27,11 +27,7 @@
                                             <div><a href="#"><i class="fa fa-user-o"></i>{{$rs->user->name}} </a></div>
                                             <div><a href="#"><i class="fa fa-clock-o"></i>{{$rs->created_at}} </a></div>
                                             <div class="pull-right">
-                                                <i class="fa fa-star @if($rs->rate < 1) -o empty @endif"></i>
-                                                <i class="fa fa-star @if($rs->rate < 2) -o empty @endif"></i>
-                                                <i class="fa fa-star @if($rs->rate < 3) -o empty @endif"></i>
-                                                <i class="fa fa-star @if($rs->rate < 4) -o empty @endif"></i>
-                                                <i class="fa fa-star @if($rs->rate < 5) -o empty @endif"></i>
+                                                <i>({{$rs->rate}})</i>
                                             </div>
                                         </div>
                                         <div class="card-body">
@@ -72,7 +68,7 @@
                                         @auth
                                             <input type="submit" value="Send Comment" class="btn btn-primary">
                                         @else
-                                            <a href="/login" class="btn btn-primary">For Send Your Comment,Please Login </a>
+                                            <a href="{{route('loginuser')}}" class="btn btn-primary">For Send Your Comment,Please Login </a>
                                         @endauth
                                     </div>
                                 </form>

@@ -107,7 +107,6 @@ class HomeController extends Controller
         $data->content_id = $request->input('content_id');
         $data->comment = $request->input('comment');
         $data->rate = $request->input('rate');
-        $data->status = $request->input('status');
         $data->ip = request()->ip();
         $data->save();
 
@@ -141,5 +140,23 @@ class HomeController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         return redirect('/');
+    }
+
+    public function loginadmincheck(Request $request)
+    {
+        $credentials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+        ]);
+
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+
+            return redirect()->intended('/admin');
+        }
+
+        return back()->withErrors([
+            'error' => 'The provided credentials do not match our records.',
+        ])->onlyInput('email');
     }
 }
