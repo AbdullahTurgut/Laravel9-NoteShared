@@ -5,12 +5,12 @@
                 <div class="col-xs-12 text-right">
                     <p class="site">www.yourdomainname.com</p>
                     <p class="num">Call: +01 123 456 7890</p>
+                    @auth
                     <ul class="fh5co-social">
-                        <li><a href="#"><i class="icon-facebook2"></i></a></li>
-                        <li><a href="#"><i class="icon-twitter2"></i></a></li>
-                        <li><a href="#"><i class="icon-dribbble2"></i></a></li>
-                        <li><a href="#"><i class="icon-github"></i></a></li>
+                        <li><strong class="text-uppercase">{{Auth::user()->name}}</strong> <i class="icon-user"></i></li>
+                        <li><a href="{{route('logoutuser')}}"><span>Logout</span></a><i class="glyphicon-log-out"></i></li>
                     </ul>
+                    @endauth
                 </div>
             </div>
         </div>
@@ -54,8 +54,10 @@
                         <li><a href="{{route('faq')}}">FAQ</a></li>
                         <li><a href="{{route('contact')}}">Contact Us</a></li>
                         <li><a href="{{route('references')}}">References</a></li>
-                        <li class="btn-cta"><a href="#"><span>Login</span></a></li>
-                        <li class="btn-cta"><a href="#"><span>Create a Course</span></a></li>
+                        @guest
+                        <li class="btn-cta"><a href="{{route('loginuser')}}"><span>Login</span></a></li>
+                        <li class="btn-cta"><a href="{{route('registeruser')}}"><span>Register</span></a></li>
+                        @endguest
                     </ul>
                 </div>
             </div>

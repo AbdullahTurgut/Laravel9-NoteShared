@@ -22,23 +22,23 @@
                             <div class="col-md-4 animate-box">
                                 <h2>User's Comments</h2>
                                 @foreach($comments as $rs)
-                                <div class="fh5co-contact-info">
-                                    <div class="list-group-item-heading">
-                                        <div><a href="#"><i class="fa fa-user-o"></i>{{$rs->user->name}} </a></div>
-                                        <div><a href="#"><i class="fa fa-clock-o"></i>{{$rs->created_at}} </a></div>
-                                        <div class="pull-right">
-                                            <i class="fa fa-star @if($rs->rate < 1) -o empty @endif"></i>
-                                            <i class="fa fa-star @if($rs->rate < 2) -o empty @endif"></i>
-                                            <i class="fa fa-star @if($rs->rate < 3) -o empty @endif"></i>
-                                            <i class="fa fa-star @if($rs->rate < 4) -o empty @endif"></i>
-                                            <i class="fa fa-star @if($rs->rate < 5) -o empty @endif"></i>
+                                    <div class="fh5co-contact-info">
+                                        <div class="list-group-item-heading">
+                                            <div><a href="#"><i class="fa fa-user-o"></i>{{$rs->user->name}} </a></div>
+                                            <div><a href="#"><i class="fa fa-clock-o"></i>{{$rs->created_at}} </a></div>
+                                            <div class="pull-right">
+                                                <i class="fa fa-star @if($rs->rate < 1) -o empty @endif"></i>
+                                                <i class="fa fa-star @if($rs->rate < 2) -o empty @endif"></i>
+                                                <i class="fa fa-star @if($rs->rate < 3) -o empty @endif"></i>
+                                                <i class="fa fa-star @if($rs->rate < 4) -o empty @endif"></i>
+                                                <i class="fa fa-star @if($rs->rate < 5) -o empty @endif"></i>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <strong>{{$rs->content_id}}</strong>
+                                            <p>{{$rs->comment}}</p>
                                         </div>
                                     </div>
-                                    <div class="card-body">
-                                        <strong>{{$rs->content_id}}</strong>
-                                        <p>{{$rs->comment}}</p>
-                                    </div>
-                                </div>
                                 @endforeach
                             </div>
                             <div class="col-md-8 animate-box">
@@ -59,11 +59,11 @@
                                             <div class="input-rating">
                                                 <strong class="text-uppercase">Your Rating: </strong>
                                                 <div class="stars">
-                                                    <input type="radio" id="star5" name="rate" value="5" /><label for="star5"></label>
-                                                    <input type="radio" id="star4" name="rate" value="4" /><label for="star4"></label>
-                                                    <input type="radio" id="star3" name="rate" value="3" /><label for="star3"></label>
-                                                    <input type="radio" id="star2" name="rate" value="2" /><label for="star2"></label>
-                                                    <input type="radio" id="star1" name="rate" value="1" /><label for="star1"></label>
+                                                    <input type="radio"  name="rate" value="5" /><label for="value5"> 5</label>
+                                                    <input type="radio"  name="rate" value="4" /><label for="value4"> 4</label>
+                                                    <input type="radio"  name="rate" value="3" /><label for="value3"> 3</label>
+                                                    <input type="radio"  name="rate" value="2" /><label for="value2"> 2</label>
+                                                    <input type="radio"  name="rate" value="1" /><label for="value1"> 1</label>
                                                 </div>
                                             </div>
                                         </div>

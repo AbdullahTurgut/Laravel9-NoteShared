@@ -38,6 +38,11 @@ Route::get('/references', [HomeController::class,'references'])->name('reference
 Route::post('/storemessage', [HomeController::class,'storemessage'])->name('storemessage');
 Route::get('/faq', [HomeController::class,'faq'])->name('faq');
 Route::post('/storecomment', [HomeController::class,'storecomment'])->name('storecomment');
+Route::get('/loginuser',[HomeController::class,'loginuser'])->name('loginuser');
+Route::get('/registeruser',[HomeController::class,'registeruser'])->name('registeruser');
+Route::get('/logoutuser',[HomeController::class,'logout'])->name('logoutuser');
+
+
 
 
 //Get Deatils Page From Main Page

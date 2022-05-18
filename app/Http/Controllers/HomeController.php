@@ -123,4 +123,23 @@ class HomeController extends Controller
             'setting'=>$setting
         ]);
     }
+    public function loginuser(){
+        $sliderdata = Content::limit(4)->get();
+        return view('home.login',[
+            'sliderdata'=>$sliderdata
+        ]);
+    }
+    public function registeruser(){
+        $sliderdata = Content::limit(4)->get();
+        return view('home.register',[
+            'sliderdata'=>$sliderdata
+        ]);
+    }
+
+    public function logout(Request $request){
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/');
+    }
 }
