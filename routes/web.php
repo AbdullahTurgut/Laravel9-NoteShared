@@ -43,7 +43,7 @@ Route::get('/loginuser',[HomeController::class,'loginuser'])->name('loginuser');
 Route::get('/registeruser',[HomeController::class,'registeruser'])->name('registeruser');
 Route::get('/logoutuser',[HomeController::class,'logout'])->name('logoutuser');
 
-Route::view('/loginadmin','admin.login');
+Route::view('/loginadmin','admin.login')->name('loginadmin');
 Route::post('/loginadmincheck', [HomeController::class,'loginadmincheck'])->name('loginadmincheck');
 
 
@@ -60,7 +60,8 @@ Route::middleware(['auth:sanctum','verified'])->get('/dashboard',function(){
 
 
 // admin/category kısmındaki sürekli tekrarlanan durumu kaldırmak için prefix yöntemi
-Route::prefix('admin')->name('admin.')->group(function () {
+//burda middleware 'admin' i Kernel de de tanımlamamamız gerekiyor
+Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
 //***********AdminPanel Controller***************
     Route::get('/', [AdminHomeController::class,'index'])->name('index');
 
