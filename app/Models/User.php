@@ -62,4 +62,10 @@ class User extends Authenticatable
     public function comments(){
         return $this->hasMany(Comment::class);
     }
+
+    //burda role_user olarak bizden beklediği için ilişkiyi kuramıyoruz
+    //bunun için Role::class,'role_users' yapmamız lazım çünkü veritabanımızda böyle
+    public function roles(){
+        return $this->belongsToMany(Role::class,'role_users');
+    }
 }
