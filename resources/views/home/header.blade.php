@@ -4,10 +4,17 @@
             <div class="row">
                 <div class="col-xs-12 text-right">
                     <p class="site">www.yourdomainname.com</p>
-                    <p class="num">Call: +01 123 456 7890</p>
                     @auth
-                    <ul class="fh5co-social">
-                        <li><strong class="text-uppercase">{{Auth::user()->name}}</strong> <i class="icon-user"></i></li>
+                    <ul class="dropdown">
+                        <li class="has-dropdown">
+                            <a href="#">
+                                <strong class="text-uppercase">{{Auth::user()->name}}</strong> <i class="icon-user"></i>
+                            </a>
+                            <ul class="dropdown">
+                                <li><a href="{{route('userpanel.index')}}">My Profile</a></li>
+                            </ul>
+                        </li>
+
                         <li><a href="{{route('logoutuser')}}"><span>Logout</span></a><i class="glyphicon-log-out"></i></li>
                     </ul>
                     @endauth
@@ -40,8 +47,9 @@
                                 @endforeach
                             </ul>
                         </li>
-                        <li><a href="teacher.html">Teacher</a></li>
+                        <!--<li><a href="teacher.html">Teacher</a></li>-->
                         <li><a href="{{route('about')}}">About Us</a></li>
+                        <!--
                         <li class="has-dropdown">
                             <a href="blog.html">Blog</a>
                             <ul class="dropdown">
@@ -51,6 +59,7 @@
                                 <li><a href="#">API</a></li>
                             </ul>
                         </li>
+                        -->
                         <li><a href="{{route('faq')}}">FAQ</a></li>
                         <li><a href="{{route('contact')}}">Contact Us</a></li>
                         <li><a href="{{route('references')}}">References</a></li>
