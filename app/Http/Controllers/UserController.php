@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Content;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -16,6 +18,15 @@ class UserController extends Controller
     {
         $sliderdata = Content::limit(4)->get();
         return view('home.user.index',[
+            'sliderdata'=>$sliderdata
+        ]);
+    }
+
+    public function comments(){
+        $comments = Comment::where('user_id','=', Auth::id())->get();
+        $sliderdata = Content::limit(4)->get();
+        return view ('home.user.comments',[
+            'comments' => $comments,
             'sliderdata'=>$sliderdata
         ]);
     }
@@ -84,5 +95,13 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function commentdestroy($id)
+    {
+        //
+        $data= Comment::find($id);
+        $data->delete();
+        return redirect(route('userpanel.comments'));
     }
 }

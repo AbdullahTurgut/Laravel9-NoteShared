@@ -65,9 +65,11 @@ Route::middleware('auth')->group(function () {
 // admin/category kısmındaki sürekli tekrarlanan durumu kaldırmak için prefix yöntemi
 //burda middleware 'admin' i Kernel de de tanımlamamamız gerekiyor
 
-    //*********************USER ROUTES **********************
+    //*********************USER PANEL ROUTES **********************
     Route::prefix('userpanel')->name('userpanel.')->controller(UserController::class)->group(function () {
         Route::get('/', 'index')->name('index');
+        Route::get('/comments', 'comments')->name('comments');
+        Route::get('/commentdestroy/{id}', 'commentdestroy')->name('commentdestroy');
     });
 
     //*********************ADMİN PANEL ROUTES **********************
