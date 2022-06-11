@@ -22,8 +22,8 @@ class HomeController extends Controller
 
     public function index(){
 
-        $sliderdata = Content::limit(4)->get();
-        $contentlist1 = Content::limit(6)->get();
+        $sliderdata = Content::limit(5)->get();
+        $contentlist1 = Content::limit(8)->get();
         $setting = Setting::first();
 
         return view('home.index',[
@@ -35,7 +35,7 @@ class HomeController extends Controller
 
     public function content($id)
     {
-        $sliderdata = Content::limit(4)->get();
+        $sliderdata = Content::limit(5)->get();
         $data = Content::find($id);
         $comments = Comment::where('content_id',$id)->where('status','True')->get();
         return view('home.content',[
@@ -47,7 +47,7 @@ class HomeController extends Controller
 
     public function categorycontents($id)
     {
-        $sliderdata = Content::limit(4)->get();
+        $sliderdata = Content::limit(5)->get();
         $category = Category::find($id);
         $contents=DB::table('contents')->where('category_id',$id)->get();
         return view('home.categorycontents',[
@@ -58,7 +58,7 @@ class HomeController extends Controller
     }
 
     public function about(){
-        $sliderdata = Content::limit(4)->get();
+        $sliderdata = Content::limit(5)->get();
         $setting = Setting::first();
 
         return view('home.about',[
@@ -68,7 +68,7 @@ class HomeController extends Controller
     }
 
     public function contact(){
-        $sliderdata = Content::limit(4)->get();
+        $sliderdata = Content::limit(5)->get();
         $setting = Setting::first();
 
         return view('home.contact',[
@@ -77,7 +77,7 @@ class HomeController extends Controller
         ]);
     }
     public function faq(){
-        $sliderdata = Content::limit(4)->get();
+        $sliderdata = Content::limit(5)->get();
         $setting = Setting::first();
         $datalist = Faq::all();
         return view('home.faq',[
@@ -114,7 +114,7 @@ class HomeController extends Controller
     }
 
     public function references(){
-        $sliderdata = Content::limit(4)->get();
+        $sliderdata = Content::limit(5)->get();
         $setting = Setting::first();
 
         return view('home.references',[
@@ -123,13 +123,13 @@ class HomeController extends Controller
         ]);
     }
     public function loginuser(){
-        $sliderdata = Content::limit(4)->get();
+        $sliderdata = Content::limit(5)->get();
         return view('home.login',[
             'sliderdata'=>$sliderdata
         ]);
     }
     public function registeruser(){
-        $sliderdata = Content::limit(4)->get();
+        $sliderdata = Content::limit(5)->get();
         return view('home.register',[
             'sliderdata'=>$sliderdata
         ]);

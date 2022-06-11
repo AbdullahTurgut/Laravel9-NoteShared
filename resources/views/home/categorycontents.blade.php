@@ -21,6 +21,9 @@
                         <div class="desc">
                             <h3><a href="#">{{$rs->title}}</a></h3>
                             <p>{!! $rs->description !!}</p>
+
+                        </div>
+                        <div class="desc">
                             <span><a href="{{route('content',['id'=>$rs->id])}}" class="btn btn-primary btn-sm btn-course">Take A Look</a></span>
                         </div>
                     </div>

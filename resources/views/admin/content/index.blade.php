@@ -33,6 +33,7 @@
                                 <th>Category Id</th>
                                 <th>Title</th>
                                 <th>Image</th>
+                                <th>File</th>
                                 <th>Image Gallery</th>
                                 <th>Status</th>
                                 <th>Edit</th>
@@ -49,6 +50,11 @@
                                     <td class="py-1">
                                         @if($rs->image)
                                             <img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" alt="image">
+                                        @endif
+                                    </td>
+                                    <td class="py-1">
+                                        @if($rs->file)
+                                            <img src="{{\Illuminate\Support\Facades\Storage::url($rs->file)}}">
                                         @endif
                                     </td>
                                     <td><a href="{{route('admin.image.index',['cid'=>$rs->id])}}"

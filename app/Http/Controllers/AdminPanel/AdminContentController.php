@@ -59,7 +59,9 @@ class AdminContentController extends Controller
         if($request->file('image')){
             $data->image=$request->file('image')->store('images');
         }
-
+        if($request->file('file')){
+            $data->file=$request->file('file')->store('files');
+        }
         $data->save();
         return redirect('admin/content');
     }

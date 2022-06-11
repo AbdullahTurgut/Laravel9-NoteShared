@@ -39,7 +39,6 @@
                                             <td>{{$rs->status}}</td>
                                             <td><a href="{{route('userpanel.commentdestroy',['id'=>$rs->id])}}" class="btn btn-danger btn-rounded btn-fw"
                                                    onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
-
                                         </tr>
                                     @endforeach
                                     </tbody>

@@ -12,6 +12,11 @@
             <img class="img-responsive" src="{{\Illuminate\Support\Facades\Storage::url($data ->image)}}" alt="">
         </div>
         <div class="container">
+            <h2> Uploaded File </h2>
+            <img class="img-responsive" src="{{\Illuminate\Support\Facades\Storage::url($data ->file)}}" alt="">
+            <a href="{{\Illuminate\Support\Facades\Storage::url($data ->file)}}" class="btn btn-primary btn-sm btn-course">Download File</a>
+        </div>
+        <div class="container">
             <p>{!! $data->detail!!}</p>
         </div>
         <div id="fh5co-course-categories">

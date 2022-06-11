@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Comment;
 use App\Models\Content;
 use Illuminate\Http\Request;
@@ -30,7 +31,15 @@ class UserController extends Controller
             'sliderdata'=>$sliderdata
         ]);
     }
-
+    public function addcontentsuser()
+    {
+        $sliderdata = Content::limit(4)->get();
+        $data= Category::all();
+        return view('home.user.addcontentsuser',[
+            'sliderdata'=>$sliderdata,
+            'data' =>$data
+        ]);
+    }
     /**
      * Show the form for creating a new resource.
      *

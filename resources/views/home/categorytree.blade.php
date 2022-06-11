@@ -10,7 +10,7 @@
             </ul>
             <hr>
         @else
-            <li><a href="{{route('categorycontents',['id'=>$subcategory->id,'slug'=>$subcategory->title])}}">{{$subcategory->title}}</a></li>
+            <li class="has-dropdown"><a href="{{route('categorycontents',['id'=>$subcategory->id,'slug'=>$subcategory->title])}}">{{$subcategory->title}}</a></li>
         @endif
     </ul>
 @endforeach

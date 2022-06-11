@@ -49,19 +49,7 @@
                                 @endforeach
                             </ul>
                         </li>
-                        <!--<li><a href="teacher.html">Teacher</a></li>-->
                         <li><a href="{{route('about')}}">About Us</a></li>
-                        <!--
-                        <li class="has-dropdown">
-                            <a href="blog.html">Blog</a>
-                            <ul class="dropdown">
-                                <li><a href="#">Web Design</a></li>
-                                <li><a href="#">eCommerce</a></li>
-                                <li><a href="#">Branding</a></li>
-                                <li><a href="#">API</a></li>
-                            </ul>
-                        </li>
-                        -->
                         <li><a href="{{route('faq')}}">FAQ</a></li>
                         <li><a href="{{route('contact')}}">Contact Us</a></li>
                         <li><a href="{{route('references')}}">References</a></li>
