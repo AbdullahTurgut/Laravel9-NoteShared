@@ -31,15 +31,16 @@ class UserController extends Controller
             'sliderdata'=>$sliderdata
         ]);
     }
-    public function addcontentsuser()
-    {
+
+    public function contents(){
+        $contents = Content::where('user_id','=', Auth::id())->get();
         $sliderdata = Content::limit(4)->get();
-        $data= Category::all();
-        return view('home.user.addcontentsuser',[
-            'sliderdata'=>$sliderdata,
-            'data' =>$data
+        return view ('home.user.contents',[
+            'contents' => $contents,
+            'sliderdata'=>$sliderdata
         ]);
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -48,6 +49,12 @@ class UserController extends Controller
     public function create()
     {
         //
+        $sliderdata = Content::limit(4)->get();
+        $data= Category::all();
+        return view('home.user.addcontentsuser',[
+            'sliderdata'=>$sliderdata,
+            'data' =>$data
+        ]);
     }
 
     /**
@@ -59,6 +66,22 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //
+        $data = new Content();
+        $data->category_id = $request->category_id;
+        $data->user_id = Auth::id();
+        $data->title = $request->title;
+        $data->keywords = $request->keywords;
+        $data->description = $request->description;
+        $data->detail = $request->detail;
+        $data->status = $request->status;
+        if($request->file('image')){
+            $data->image=$request->file('image')->store('images');
+        }
+        if($request->file('file')){
+            $data->file=$request->file('file')->store('files');
+        }
+        $data->save();
+        return redirect('/');
     }
 
     /**
@@ -75,24 +98,50 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
+     * @param  \App\Models\Content  $content
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Content $content,$id)
     {
         //
+        $sliderdata = Content::limit(4)->get();
+        $data= Content::find($id);
+        $datalist = Category::all();
+        return view('home.user.edit',[
+            'data' => $data,
+            'sliderdata'=>$sliderdata,
+            'datalist' => $datalist
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Content  $content
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Content $content, $id)
     {
         //
+        $data= Content::find($id);
+        $data->category_id = $request->category_id;
+        $data->user_id = Auth::id();
+        $data->title = $request->title;
+        $data->keywords = $request->keywords;
+        $data->description = $request->description;
+        $data->detail = $request->detail;
+        $data->status = $request->status;
+        if($request->file('image')){
+            $data->image=$request->file('image')->store('images');
+        }
+        if($request->file('file')){
+            $data->file=$request->file('file')->store('files');
+        }
+        $data->save();
+        return redirect(route('userpanel.index'));
     }
 
     /**

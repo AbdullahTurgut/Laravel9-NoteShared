@@ -63,6 +63,12 @@
                 </div>
             </div>
             <div class="form-group">
+                <label>File</label>
+                <div class="input-group col-xs-12">
+                    <input type="file" name="file" class="form-control custom-file-input">
+                </div>
+            </div>
+            <div class="form-group">
                 <label for="exampleFormControlSelect2">Status</label>
                 <select class="form-control" name="status">
                     <option selected>{{$data->status}}</option>

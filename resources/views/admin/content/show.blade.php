@@ -61,6 +61,14 @@
                         @endif
                     </td>
                 </tr>
+                <tr class="table-warning">
+                    <th>File</th>
+                    <td>
+                        @if($data->file)
+                            <img src="{{\Illuminate\Support\Facades\Storage::url($data->file)}}" style="height: 50px">
+                        @endif
+                    </td>
+                </tr>
                 <tr class="table-primary">
                     <th>Status</th>
                     <td>{{$data->status}}</td>

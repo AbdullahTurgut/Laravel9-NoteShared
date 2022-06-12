@@ -60,18 +60,27 @@ Route::middleware(['auth:sanctum','verified'])->get('/dashboard',function(){
 
 //bütün admin paneli için admin mi değilmi kimlik doğrulaması yapmak için middleware group içine yazdık
 //diğer türlü roles hatası alıyoruz
+
+
 //************USER AUTH CONTROL************
 Route::middleware('auth')->group(function () {
+
+
 // admin/category kısmındaki sürekli tekrarlanan durumu kaldırmak için prefix yöntemi
 //burda middleware 'admin' i Kernel de de tanımlamamamız gerekiyor
 
     //*********************USER PANEL ROUTES **********************
     Route::prefix('userpanel')->name('userpanel.')->controller(UserController::class)->group(function () {
         Route::get('/', 'index')->name('index');
+        Route::get('/contents', 'contents')->name('contents');
         Route::get('/comments', 'comments')->name('comments');
-        Route::get('/addcontentsuser', 'addcontentsuser')->name('addcontentsuser');
+        Route::get('/addcontentsuser', 'create')->name('addcontentsuser');
+        Route::post('/store', 'store')->name('store');
+        Route::get('/edit/{id}', 'edit')->name('edit');
+        Route::post('/update/{id}', 'update')->name('update');
         Route::get('/commentdestroy/{id}', 'commentdestroy')->name('commentdestroy');
     });
+
 
     //*********************ADMİN PANEL ROUTES **********************
     Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {

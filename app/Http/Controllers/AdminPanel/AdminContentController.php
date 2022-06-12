@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Content;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class AdminContentController extends Controller
@@ -50,7 +51,7 @@ class AdminContentController extends Controller
         //
         $data = new Content();
         $data->category_id = $request->category_id;
-        $data->user_id = 0;
+        $data->user_id = Auth::id();
         $data->title = $request->title;
         $data->keywords = $request->keywords;
         $data->description = $request->description;
@@ -110,7 +111,7 @@ class AdminContentController extends Controller
         //
         $data= Content::find($id);
         $data->category_id = $request->category_id;
-        $data->user_id = 0;
+        $data->user_id = Auth::id();
         $data->title = $request->title;
         $data->keywords = $request->keywords;
         $data->description = $request->description;
@@ -118,6 +119,9 @@ class AdminContentController extends Controller
         $data->status = $request->status;
         if($request->file('image')){
             $data->image=$request->file('image')->store('images');
+        }
+        if($request->file('file')){
+            $data->file=$request->file('file')->store('files');
         }
         $data->save();
         return redirect('admin/content');
