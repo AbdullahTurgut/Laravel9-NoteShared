@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Comment;
 use App\Models\Content;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -18,26 +19,32 @@ class UserController extends Controller
     public function index()
     {
         $sliderdata = Content::limit(4)->get();
+        $setting = Setting::first();
         return view('home.user.index',[
-            'sliderdata'=>$sliderdata
+            'sliderdata'=>$sliderdata,
+            'setting' => $setting
         ]);
     }
 
     public function comments(){
         $comments = Comment::where('user_id','=', Auth::id())->get();
         $sliderdata = Content::limit(4)->get();
+        $setting = Setting::first();
         return view ('home.user.comments',[
             'comments' => $comments,
-            'sliderdata'=>$sliderdata
+            'sliderdata'=>$sliderdata,
+            'setting' => $setting
         ]);
     }
 
     public function contents(){
         $contents = Content::where('user_id','=', Auth::id())->get();
         $sliderdata = Content::limit(4)->get();
+        $setting = Setting::first();
         return view ('home.user.contents',[
             'contents' => $contents,
-            'sliderdata'=>$sliderdata
+            'sliderdata'=>$sliderdata,
+            'setting' => $setting
         ]);
     }
 
@@ -51,9 +58,11 @@ class UserController extends Controller
         //
         $sliderdata = Content::limit(4)->get();
         $data= Category::all();
+        $setting = Setting::first();
         return view('home.user.addcontentsuser',[
             'sliderdata'=>$sliderdata,
-            'data' =>$data
+            'data' =>$data,
+            'setting' => $setting
         ]);
     }
 

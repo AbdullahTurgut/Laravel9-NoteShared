@@ -18,7 +18,7 @@
                                 <h3>User Profile</h3>
                             </div>
                             <div class="input-checkbox">
-
+                                @include('profile.show')
                             </div>
 
                         </div>

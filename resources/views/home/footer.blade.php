@@ -10,11 +10,9 @@
             <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
                 <h3>Shared Notes Categories</h3>
                 <ul class="fh5co-footer-links">
-                    <li><a href="#">Courses</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Terms</a></li>
-                    <li><a href="#">Meetups</a></li>
+                    <li><a href="{{route('home')}}">Home</a></li>
+                    <li><a href="{{route('about')}}">About Us</a></li>
+                    <li><a href="{{route('contact')}}">Contact Us</a></li>
                 </ul>
             </div>
 
@@ -32,12 +30,15 @@
                             Twitter
                         </a>
                     </li>
-                    <li><a href="#">İnstagram</a></li>
-                    <li><a href="#">Linkedin</a></li>
+                    <li><a href="{{url($setting->instagram)}}"
+                           onclick="return !window.open(this.href,'','top=50 left=100 width=1100,height=700')">
+                            İnstagram
+                        </a>
+                    </li>
                     <li><a href="#">Youtube</a></li>
                 </ul>
             </div>
-
+            <!--
             <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
                 <h3>Engage us</h3>
                 <ul class="fh5co-footer-links">
@@ -47,7 +48,10 @@
                     <li><a href="#">Advertise</a></li>
                 </ul>
             </div>
+            -->
 
+
+            <!--
             <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
                 <h3>Legal</h3>
                 <ul class="fh5co-footer-links">
@@ -58,6 +62,7 @@
                     <li><a href="#">API</a></li>
                 </ul>
             </div>
+            -->
         </div>
 
         <div class="row copyright">

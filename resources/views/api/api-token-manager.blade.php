@@ -91,9 +91,9 @@
                 </x-slot>
             </x-jet-action-section>
         </div>
-@endif
+    @endif
 
-<!-- Token Value Modal -->
+    <!-- Token Value Modal -->
     <x-jet-dialog-modal wire:model="displayingToken">
         <x-slot name="title">
             {{ __('API Token') }}
@@ -105,9 +105,9 @@
             </div>
 
             <x-jet-input x-ref="plaintextToken" type="text" readonly :value="$plainTextToken"
-                         class="mt-4 bg-gray-100 px-4 py-2 rounded font-mono text-sm text-gray-500 w-full"
-                         autofocus autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
-                         @showing-token-modal.window="setTimeout(() => $refs.plaintextToken.select(), 250)"
+                class="mt-4 bg-gray-100 px-4 py-2 rounded font-mono text-sm text-gray-500 w-full"
+                autofocus autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+                @showing-token-modal.window="setTimeout(() => $refs.plaintextToken.select(), 250)"
             />
         </x-slot>
 

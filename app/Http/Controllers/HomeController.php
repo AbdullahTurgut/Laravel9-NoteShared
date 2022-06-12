@@ -50,11 +50,13 @@ class HomeController extends Controller
     {
         $sliderdata = Content::limit(5)->get();
         $category = Category::find($id);
+        $setting = Setting::first();
         $contents=DB::table('contents')->where('category_id',$id)->get();
         return view('home.categorycontents',[
             'sliderdata'=>$sliderdata,
             'category'=>$category,
-            'contents'=>$contents
+            'contents'=>$contents,
+            'setting'=>$setting
         ]);
     }
 
