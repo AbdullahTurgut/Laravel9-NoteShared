@@ -122,7 +122,7 @@
                         <span class="nav-profile-name">{{Auth::user()->name}}</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-                        <a class="dropdown-item" href="{{route('logoutuser')}}">
+                        <a class="dropdown-item" href="{{route('loginadmin')}}">
                             <i class="mdi mdi-logout text-primary"></i>
                             Logout
                         </a>

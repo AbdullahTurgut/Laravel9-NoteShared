@@ -10,7 +10,7 @@
                             <div class="slider-text-inner">
                                 <h1>{{$rs->title}}</h1>
                                 <h2>{{$rs->keywords}}</h2>
-                                <p><a class="btn btn-primary btn-lg" href="#">Start Learning Now!</a></p>
+                                <p><a class="btn btn-primary btn-lg" href="{{route('content',['id'=>$rs->id])}}">Start Learning Now!</a></p>
                             </div>
                         </div>
                     </div>

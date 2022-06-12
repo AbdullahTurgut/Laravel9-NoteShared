@@ -36,10 +36,12 @@ class HomeController extends Controller
     {
         $sliderdata = Content::limit(5)->get();
         $data = Content::find($id);
+        $setting = Setting::first();
         $comments = Comment::where('content_id',$id)->where('status','True')->get();
         return view('home.content',[
             'sliderdata'=>$sliderdata,
             'data'=>$data,
+            'setting'=>$setting,
             'comments'=>$comments
         ]);
     }

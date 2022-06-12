@@ -12,9 +12,12 @@
             <img class="img-responsive" src="{{\Illuminate\Support\Facades\Storage::url($data ->image)}}" alt="">
         </div>
         <div class="container">
-            <h2> For More Information Download The Uploaded File </h2>
+
             <img class="img-responsive" src="{{\Illuminate\Support\Facades\Storage::url($data ->file)}}" alt="">
-            <a href="{{\Illuminate\Support\Facades\Storage::url($data ->file)}}" class="btn btn-primary btn-sm btn-course">Download File</a>
+            @if($data->file != null)
+                <h2> For More Information Download The Uploaded File </h2>
+                <a href="{{\Illuminate\Support\Facades\Storage::url($data ->file)}}" class="btn btn-primary btn-sm btn-course">Download File</a>
+            @endif
         </div>
         <div class="container">
             <p>{!! $data->detail!!}</p>
