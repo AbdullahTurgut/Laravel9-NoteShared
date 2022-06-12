@@ -25,7 +25,6 @@ class HomeController extends Controller
         $sliderdata = Content::limit(5)->get();
         $contentlist1 = Content::limit(8)->get();
         $setting = Setting::first();
-
         return view('home.index',[
             'sliderdata'=>$sliderdata,
             'setting'=>$setting,

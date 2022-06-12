@@ -12,7 +12,7 @@
             <img class="img-responsive" src="{{\Illuminate\Support\Facades\Storage::url($data ->image)}}" alt="">
         </div>
         <div class="container">
-            <h2> Uploaded File </h2>
+            <h2> For More Information Download The Uploaded File </h2>
             <img class="img-responsive" src="{{\Illuminate\Support\Facades\Storage::url($data ->file)}}" alt="">
             <a href="{{\Illuminate\Support\Facades\Storage::url($data ->file)}}" class="btn btn-primary btn-sm btn-course">Download File</a>
         </div>
@@ -26,6 +26,10 @@
                         <div class="row">
                             <div class="col-md-4 animate-box">
                                 <h2>User's Comments</h2>
+                                @php
+                                    $average = $data->comments->average('rate');
+                                @endphp
+                                <a href="#">{{$data->comments->count('id')}} Comment(s) & {{number_format($average,2)}} Av. Rate</a>
                                 @foreach($comments as $rs)
                                     <div class="fh5co-contact-info">
                                         <div class="list-group-item-heading">
